@@ -1,13 +1,10 @@
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.PriorityQueue;
+import java.util.*;
 
 public class Main {
 
     static int INF = 1000000000;
-    static int N, M, X; // 학생 수, 노드 수, 특정 마을 X
+    static int N, M, X; // 마을 수, 간선 수, 특정 마을 X
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -18,71 +15,66 @@ public class Main {
         M = Integer.parseInt(inputs[1]);
         X = Integer.parseInt(inputs[2]);
 
-        int[][] graph = new int[N+1][N+1];
-        for (int i=0; i<N+1; i++) {
-            Arrays.fill(graph[i], INF);
+        List<Edge>[] graph = new ArrayList[N + 1];
+        for (int i = 1; i <= N; i++) {
+            graph[i] = new ArrayList<>();
         }
 
-        for (int i=0; i<M; i++) {
+        for (int i = 0; i < M; i++) {
             inputs = br.readLine().split(" ");
             int start = Integer.parseInt(inputs[0]);
             int end = Integer.parseInt(inputs[1]);
             int cost = Integer.parseInt(inputs[2]);
-            graph[start][end] = cost;
+            graph[start].add(new Edge(end, cost));
         }
 
-        int[] ans = dijkstra(X, graph);
-        ans[0] = 0;
-        for(int i=1;i<N+1; i++) {
+        int[] distFromX = dijkstra(X, graph);
+        int maxDistance = 0;
+
+        for (int i = 1; i <= N; i++) {
             if (i != X) {
-                int[] iToX = dijkstra(i, graph);
-                ans[i] += iToX[X];
+                int[] distToX = dijkstra(i, graph);
+                maxDistance = Math.max(maxDistance, distFromX[i] + distToX[X]);
             }
         }
 
-        bw.write(Arrays.stream(ans).max().getAsInt()+"");
+        bw.write(maxDistance + "");
         bw.flush();
     }
 
-    // start 에서 다른 마을로 가는 최단 비용을 계산하는 함수
-    static int[] dijkstra(int start, int[][] graph) {
-        int[] dist = new int[N+1];
+    // 다익스트라 알고리즘으로 start에서 모든 노드까지의 최단 거리를 반환
+    static int[] dijkstra(int start, List<Edge>[] graph) {
+        int[] dist = new int[N + 1];
         Arrays.fill(dist, INF);
         dist[start] = 0;
 
-        PriorityQueue<Graph> pq = new PriorityQueue<>(1, new GraphComparator());
-        pq.add(new Graph(start, 0));
+        PriorityQueue<Edge> pq = new PriorityQueue<>(Comparator.comparingInt(e -> e.cost));
+        pq.add(new Edge(start, 0));
 
         while (!pq.isEmpty()) {
-            Graph cur = pq.poll();
-            if (dist[cur.node] >= cur.cost) {
-                for (int i=1; i<N+1; i++) {
-                    int new_cost = cur.cost + graph[cur.node][i];
-                    if (new_cost < dist[i]) {
-                        dist[i] = new_cost;
-                        pq.add(new Graph(i, new_cost));
-                    }
+            Edge cur = pq.poll();
+
+            if (dist[cur.to] < cur.cost) continue;
+
+            for (Edge next : graph[cur.to]) {
+                int new_cost = cur.cost + next.cost;
+                if (new_cost < dist[next.to]) {
+                    dist[next.to] = new_cost;
+                    pq.add(new Edge(next.to, new_cost));
                 }
             }
         }
+
         return dist;
     }
 
-}
+    static class Edge {
+        int to;
+        int cost;
 
-class Graph{
-    int node;
-    int cost;
-    public Graph(int node, int cost) {
-        this.node = node;
-        this.cost = cost;
-    }
-}
-
-class GraphComparator implements Comparator<Graph>{
-
-    @Override
-    public int compare(Graph o1, Graph o2) {
-        return Integer.compare(o1.cost, o2.cost);
+        public Edge(int to, int cost) {
+            this.to = to;
+            this.cost = cost;
+        }
     }
 }
