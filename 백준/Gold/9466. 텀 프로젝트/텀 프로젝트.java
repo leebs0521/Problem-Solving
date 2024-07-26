@@ -7,10 +7,8 @@ public class Main {
     static int N;
     static int[] student;
     static int[] state;
-    static int NOT_VISITED = -1;
-    static int VISITED = 1;
-    static int CYCLE_IN = 2;
-    static int NOT_CYCLE_IN = 3;
+    static int NOT_VISITED = 0;
+    static int CYCLE_IN = -1;
 
     public static void main(String[] args) throws IOException {
 
@@ -28,13 +26,12 @@ public class Main {
                 student[i] = Integer.parseInt(st.nextToken());
             }
 
-            Arrays.fill(state, -1);
             for (int i = 1; i <= N; i++) {
                 if (state[i] == NOT_VISITED) run(i);
             }
             int ans = 0;
             for (int i = 1; i <= N; i++) {
-                if (state[i] == NOT_CYCLE_IN) ans++;
+                if (state[i] != CYCLE_IN) ans++;
             }
 
             bw.write(ans + "\n");
@@ -47,42 +44,19 @@ public class Main {
         int cur = start;
 
         while (true) {
-            state[cur] = VISITED;
+            state[cur] = start;
             cur = student[cur];
 
-            // 이미 사이클이거나 이미 사이클이 아닌 경우 -> 사이클이 아님
-            if (state[cur] == CYCLE_IN || state[cur] == NOT_CYCLE_IN) {
-                cur = start;
-                while (state[cur] == VISITED) {
-                    state[cur] = NOT_CYCLE_IN;
-                    cur = student[cur];
-                }
-                return;
-            }
-
-            // 사이클을 찾았는데 시작점이 아닌 경우
-            if (state[cur] == VISITED && cur != start) {
-                while (state[cur] != CYCLE_IN) {
-                    state[cur] = CYCLE_IN;
-                    cur = student[cur];
-                }
-                cur = start;
-                while (state[cur] == VISITED) {
-                    state[cur] = NOT_CYCLE_IN;
-                    cur = student[cur];
-                }
-
-                return;
-            }
-            
-            // 사이클을 찾았는데 시작점인 경우
-            if (state[cur] == VISITED && cur == start) {
-                while (state[cur] != CYCLE_IN) {
+            // 사이클을 찾은 경우
+            if (state[cur] == start) {
+                while(state[cur] != CYCLE_IN){
                     state[cur] = CYCLE_IN;
                     cur = student[cur];
                 }
                 return;
             }
+            // 이전 사이클에서 방문한 학생인 경우
+            else if(state[cur] != 0) return;
         }
     }
 }
