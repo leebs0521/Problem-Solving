@@ -6,6 +6,8 @@ public class Main {
     static int M, N, K;
     static boolean[][] visited;
     static int[][] graph;
+    static int[] dx = {0, 0, 1, -1};
+    static int[] dy = {1, -1, 0, 0};
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -34,30 +36,21 @@ public class Main {
                     if(visited[i][j] || graph[i][j] == 0) continue;
                     cnt++;
                     visited[i][j] = true;
-                    bfs(i, j);
+                    dfs(i, j);
                 }
             }
             bw.write(cnt+"\n");
         }
         bw.flush();
     }
-    static void bfs(int i, int j){
-        Queue<int[]> q = new LinkedList<>();
-        q.add(new int[]{i, j});
-        int[] dx = {0, 0, 1, -1};
-        int[] dy = {1, -1, 0, 0};
-        while (!q.isEmpty()) {
-            int[] cur = q.poll();
-
-            for (int k = 0; k < 4; k++) {
-                int nx = cur[0] + dx[k];
-                int ny = cur[1] + dy[k];
-
-                if(nx < 0 || nx > M -1 || ny < 0 || ny > N - 1) continue;
-                if(graph[nx][ny] == 0 || visited[nx][ny]) continue;
-                visited[nx][ny] = true;
-                q.add(new int[]{nx, ny});
-            }
+    static void dfs(int i, int j) {
+        for (int k = 0; k < 4; k++) {
+            int nx = i + dx[k];
+            int ny = j + dy[k];
+            if(nx < 0 || nx > M - 1 || ny < 0 || ny > N - 1) continue;
+            if(graph[nx][ny] == 0 || visited[nx][ny]) continue;
+            visited[nx][ny] = true;
+            dfs(nx, ny);
         }
     }
 }
