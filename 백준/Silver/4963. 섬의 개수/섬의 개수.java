@@ -2,78 +2,63 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
-    static int cnt, h, w;
+
+    static int[] dx = {0, 0, 1, -1, 1, -1, 1, -1};
+
+    static int[] dy = {1, -1, 0, 0, -1 ,1, 1 ,-1};
+
+    static int W, H, cnt;
+    static int[][] graph;
+    static boolean[][] visited;
 
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         while (true) {
-            String[] inputs = br.readLine().split(" ");
-            w = Integer.parseInt(inputs[0]);
-            h = Integer.parseInt(inputs[1]);
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            W = Integer.parseInt(st.nextToken());
+            H = Integer.parseInt(st.nextToken());
 
-            if (w == 0 && h == 0) {
+            if (W == 0 && H == 0) {
                 break;
             }
 
-            int[][] graph = new int[h][w];
-            boolean[][] visited = new boolean[h][w];
             cnt = 0;
+            graph = new int[H][W];
+            visited = new boolean[H][W];
 
-            for (int x=0; x<h; x++) {
-                inputs = br.readLine().split(" ");
-                for (int y=0; y<w; y++) {
-                    graph[x][y] = Integer.parseInt(inputs[y]);
+            for (int i = 0; i < H; i++) {
+                st = new StringTokenizer(br.readLine());
+                for (int j = 0; j < W; j++) {
+                    graph[i][j] = Integer.parseInt(st.nextToken());
                 }
             }
 
-            for (int x=0; x<h; x++) {
-                for (int y=0; y<w; y++) {
-                    if (graph[x][y] == 1 && !visited[x][y]) {
-                        cnt++;
-                        visited[x][y] = true;
-                        BFS(new Position(x,y), graph, visited);
-                    }
+            for (int i = 0; i < H; i++) {
+                for (int j = 0; j < W; j++) {
+                    if(graph[i][j] == 0 || visited[i][j]) continue;
+                    cnt++;
+                    visited[i][j] = true;
+                    dfs(i, j);
                 }
             }
+
             bw.write(cnt+"\n");
         }
         bw.flush();
     }
-    static void BFS(Position start, int[][] graph, boolean[][] visited) {
-        int[] dx = {0, 0, 1, -1, 1, -1, 1, -1};
-        int[] dy = {1, -1, 0, 0, -1 ,1, 1 ,-1};
-        Deque<Position> q = new LinkedList<>();
 
-        int x = start.x;
-        int y = start.y;
+    static void dfs(int x, int y) {
 
-        q.add(start);
-
-        while (!q.isEmpty()) {
-            Position p = q.pollFirst();
-
-            for (int i=0; i<8; i++) {
-                int nx = p.x + dx[i];
-                int ny = p.y + dy[i];
-
-                if (0 <= nx && nx < h && 0 <= ny && ny < w) {
-                    if (!visited[nx][ny] && graph[nx][ny] == 1) {
-                        q.add(new Position(nx, ny));
-                        visited[nx][ny] = true;
-                    }
-                }
-            }
+        for (int i = 0; i < 8; i++) {
+            int nx = x + dx[i];
+            int ny = y + dy[i];
+            if(nx < 0 || nx > H - 1 || ny < 0 || ny > W - 1) continue;
+            if(graph[nx][ny] == 0 || visited[nx][ny]) continue;
+            visited[nx][ny] = true;
+            dfs(nx, ny);
         }
-    }
-}
-class Position{
-    int x;
-    int y;
 
-    public Position(int x, int y) {
-        this.x = x;
-        this.y = y;
     }
 }
