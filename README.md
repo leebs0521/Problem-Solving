@@ -29,8 +29,18 @@ Algorithm practice.
 |  |
 | ------- |
 | [0001-two-sum](https://github.com/leebs0521/Problem-Solving/tree/master/0001-two-sum) |
+| [2107-find-unique-binary-string](https://github.com/leebs0521/Problem-Solving/tree/master/2107-find-unique-binary-string) |
 ## Hash Table
 |  |
 | ------- |
 | [0001-two-sum](https://github.com/leebs0521/Problem-Solving/tree/master/0001-two-sum) |
+| [2107-find-unique-binary-string](https://github.com/leebs0521/Problem-Solving/tree/master/2107-find-unique-binary-string) |
+## String
+|  |
+| ------- |
+| [2107-find-unique-binary-string](https://github.com/leebs0521/Problem-Solving/tree/master/2107-find-unique-binary-string) |
+## Backtracking
+|  |
+| ------- |
+| [2107-find-unique-binary-string](https://github.com/leebs0521/Problem-Solving/tree/master/2107-find-unique-binary-string) |
 <!---LeetCode Topics End-->
