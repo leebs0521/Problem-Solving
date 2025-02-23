@@ -43,4 +43,8 @@ Algorithm practice.
 |  |
 | ------- |
 | [2107-find-unique-binary-string](https://github.com/leebs0521/Problem-Solving/tree/master/2107-find-unique-binary-string) |
+## Math
+|  |
+| ------- |
+| [0009-palindrome-number](https://github.com/leebs0521/Problem-Solving/tree/master/0009-palindrome-number) |
 <!---LeetCode Topics End-->
