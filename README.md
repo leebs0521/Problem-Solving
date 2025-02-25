@@ -31,6 +31,7 @@ Algorithm practice.
 | [0001-two-sum](https://github.com/leebs0521/Problem-Solving/tree/master/0001-two-sum) |
 | [0026-remove-duplicates-from-sorted-array](https://github.com/leebs0521/Problem-Solving/tree/master/0026-remove-duplicates-from-sorted-array) |
 | [0027-remove-element](https://github.com/leebs0521/Problem-Solving/tree/master/0027-remove-element) |
+| [0045-jump-game-ii](https://github.com/leebs0521/Problem-Solving/tree/master/0045-jump-game-ii) |
 | [0055-jump-game](https://github.com/leebs0521/Problem-Solving/tree/master/0055-jump-game) |
 | [0080-remove-duplicates-from-sorted-array-ii](https://github.com/leebs0521/Problem-Solving/tree/master/0080-remove-duplicates-from-sorted-array-ii) |
 | [0088-merge-sorted-array](https://github.com/leebs0521/Problem-Solving/tree/master/0088-merge-sorted-array) |
@@ -91,12 +92,14 @@ Algorithm practice.
 ## Dynamic Programming
 |  |
 | ------- |
+| [0045-jump-game-ii](https://github.com/leebs0521/Problem-Solving/tree/master/0045-jump-game-ii) |
 | [0055-jump-game](https://github.com/leebs0521/Problem-Solving/tree/master/0055-jump-game) |
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/leebs0521/Problem-Solving/tree/master/0121-best-time-to-buy-and-sell-stock) |
 | [0122-best-time-to-buy-and-sell-stock-ii](https://github.com/leebs0521/Problem-Solving/tree/master/0122-best-time-to-buy-and-sell-stock-ii) |
 ## Greedy
 |  |
 | ------- |
+| [0045-jump-game-ii](https://github.com/leebs0521/Problem-Solving/tree/master/0045-jump-game-ii) |
 | [0055-jump-game](https://github.com/leebs0521/Problem-Solving/tree/master/0055-jump-game) |
 | [0122-best-time-to-buy-and-sell-stock-ii](https://github.com/leebs0521/Problem-Solving/tree/master/0122-best-time-to-buy-and-sell-stock-ii) |
 <!---LeetCode Topics End-->
