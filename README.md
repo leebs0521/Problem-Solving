@@ -33,11 +33,13 @@ Algorithm practice.
 | [0027-remove-element](https://github.com/leebs0521/Problem-Solving/tree/master/0027-remove-element) |
 | [0080-remove-duplicates-from-sorted-array-ii](https://github.com/leebs0521/Problem-Solving/tree/master/0080-remove-duplicates-from-sorted-array-ii) |
 | [0088-merge-sorted-array](https://github.com/leebs0521/Problem-Solving/tree/master/0088-merge-sorted-array) |
+| [0169-majority-element](https://github.com/leebs0521/Problem-Solving/tree/master/0169-majority-element) |
 | [2107-find-unique-binary-string](https://github.com/leebs0521/Problem-Solving/tree/master/2107-find-unique-binary-string) |
 ## Hash Table
 |  |
 | ------- |
 | [0001-two-sum](https://github.com/leebs0521/Problem-Solving/tree/master/0001-two-sum) |
+| [0169-majority-element](https://github.com/leebs0521/Problem-Solving/tree/master/0169-majority-element) |
 | [2107-find-unique-binary-string](https://github.com/leebs0521/Problem-Solving/tree/master/2107-find-unique-binary-string) |
 ## String
 |  |
@@ -71,4 +73,13 @@ Algorithm practice.
 |  |
 | ------- |
 | [0088-merge-sorted-array](https://github.com/leebs0521/Problem-Solving/tree/master/0088-merge-sorted-array) |
+| [0169-majority-element](https://github.com/leebs0521/Problem-Solving/tree/master/0169-majority-element) |
+## Divide and Conquer
+|  |
+| ------- |
+| [0169-majority-element](https://github.com/leebs0521/Problem-Solving/tree/master/0169-majority-element) |
+## Counting
+|  |
+| ------- |
+| [0169-majority-element](https://github.com/leebs0521/Problem-Solving/tree/master/0169-majority-element) |
 <!---LeetCode Topics End-->
