@@ -58,6 +58,7 @@ Algorithm practice.
 | ------- |
 | [0012-integer-to-roman](https://github.com/leebs0521/Problem-Solving/tree/master/0012-integer-to-roman) |
 | [0013-roman-to-integer](https://github.com/leebs0521/Problem-Solving/tree/master/0013-roman-to-integer) |
+| [0058-length-of-last-word](https://github.com/leebs0521/Problem-Solving/tree/master/0058-length-of-last-word) |
 | [2107-find-unique-binary-string](https://github.com/leebs0521/Problem-Solving/tree/master/2107-find-unique-binary-string) |
 ## Backtracking
 |  |
