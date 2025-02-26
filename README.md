@@ -40,12 +40,14 @@ Algorithm practice.
 | [0169-majority-element](https://github.com/leebs0521/Problem-Solving/tree/master/0169-majority-element) |
 | [0189-rotate-array](https://github.com/leebs0521/Problem-Solving/tree/master/0189-rotate-array) |
 | [0274-h-index](https://github.com/leebs0521/Problem-Solving/tree/master/0274-h-index) |
+| [0380-insert-delete-getrandom-o1](https://github.com/leebs0521/Problem-Solving/tree/master/0380-insert-delete-getrandom-o1) |
 | [2107-find-unique-binary-string](https://github.com/leebs0521/Problem-Solving/tree/master/2107-find-unique-binary-string) |
 ## Hash Table
 |  |
 | ------- |
 | [0001-two-sum](https://github.com/leebs0521/Problem-Solving/tree/master/0001-two-sum) |
 | [0169-majority-element](https://github.com/leebs0521/Problem-Solving/tree/master/0169-majority-element) |
+| [0380-insert-delete-getrandom-o1](https://github.com/leebs0521/Problem-Solving/tree/master/0380-insert-delete-getrandom-o1) |
 | [2107-find-unique-binary-string](https://github.com/leebs0521/Problem-Solving/tree/master/2107-find-unique-binary-string) |
 ## String
 |  |
@@ -61,6 +63,7 @@ Algorithm practice.
 | [0002-add-two-numbers](https://github.com/leebs0521/Problem-Solving/tree/master/0002-add-two-numbers) |
 | [0009-palindrome-number](https://github.com/leebs0521/Problem-Solving/tree/master/0009-palindrome-number) |
 | [0189-rotate-array](https://github.com/leebs0521/Problem-Solving/tree/master/0189-rotate-array) |
+| [0380-insert-delete-getrandom-o1](https://github.com/leebs0521/Problem-Solving/tree/master/0380-insert-delete-getrandom-o1) |
 ## Linked List
 |  |
 | ------- |
@@ -108,4 +111,12 @@ Algorithm practice.
 |  |
 | ------- |
 | [0274-h-index](https://github.com/leebs0521/Problem-Solving/tree/master/0274-h-index) |
+## Design
+|  |
+| ------- |
+| [0380-insert-delete-getrandom-o1](https://github.com/leebs0521/Problem-Solving/tree/master/0380-insert-delete-getrandom-o1) |
+## Randomized
+|  |
+| ------- |
+| [0380-insert-delete-getrandom-o1](https://github.com/leebs0521/Problem-Solving/tree/master/0380-insert-delete-getrandom-o1) |
 <!---LeetCode Topics End-->
