@@ -55,6 +55,7 @@ Algorithm practice.
 | [0013-roman-to-integer](https://github.com/leebs0521/Problem-Solving/tree/master/0013-roman-to-integer) |
 | [0169-majority-element](https://github.com/leebs0521/Problem-Solving/tree/master/0169-majority-element) |
 | [0380-insert-delete-getrandom-o1](https://github.com/leebs0521/Problem-Solving/tree/master/0380-insert-delete-getrandom-o1) |
+| [0383-ransom-note](https://github.com/leebs0521/Problem-Solving/tree/master/0383-ransom-note) |
 | [2107-find-unique-binary-string](https://github.com/leebs0521/Problem-Solving/tree/master/2107-find-unique-binary-string) |
 ## String
 |  |
@@ -67,6 +68,7 @@ Algorithm practice.
 | [0058-length-of-last-word](https://github.com/leebs0521/Problem-Solving/tree/master/0058-length-of-last-word) |
 | [0125-valid-palindrome](https://github.com/leebs0521/Problem-Solving/tree/master/0125-valid-palindrome) |
 | [0151-reverse-words-in-a-string](https://github.com/leebs0521/Problem-Solving/tree/master/0151-reverse-words-in-a-string) |
+| [0383-ransom-note](https://github.com/leebs0521/Problem-Solving/tree/master/0383-ransom-note) |
 | [0392-is-subsequence](https://github.com/leebs0521/Problem-Solving/tree/master/0392-is-subsequence) |
 | [2107-find-unique-binary-string](https://github.com/leebs0521/Problem-Solving/tree/master/2107-find-unique-binary-string) |
 ## Backtracking
@@ -120,6 +122,7 @@ Algorithm practice.
 |  |
 | ------- |
 | [0169-majority-element](https://github.com/leebs0521/Problem-Solving/tree/master/0169-majority-element) |
+| [0383-ransom-note](https://github.com/leebs0521/Problem-Solving/tree/master/0383-ransom-note) |
 ## Dynamic Programming
 |  |
 | ------- |
