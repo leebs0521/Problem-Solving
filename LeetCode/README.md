@@ -35,6 +35,7 @@ Algorithm practice.
 | [0027-remove-element](https://github.com/leebs0521/Problem-Solving/tree/master/0027-remove-element) |
 | [0036-valid-sudoku](https://github.com/leebs0521/Problem-Solving/tree/master/0036-valid-sudoku) |
 | [0045-jump-game-ii](https://github.com/leebs0521/Problem-Solving/tree/master/0045-jump-game-ii) |
+| [0054-spiral-matrix](https://github.com/leebs0521/Problem-Solving/tree/master/0054-spiral-matrix) |
 | [0055-jump-game](https://github.com/leebs0521/Problem-Solving/tree/master/0055-jump-game) |
 | [0080-remove-duplicates-from-sorted-array-ii](https://github.com/leebs0521/Problem-Solving/tree/master/0080-remove-duplicates-from-sorted-array-ii) |
 | [0088-merge-sorted-array](https://github.com/leebs0521/Problem-Solving/tree/master/0088-merge-sorted-array) |
@@ -183,4 +184,9 @@ Algorithm practice.
 |  |
 | ------- |
 | [0036-valid-sudoku](https://github.com/leebs0521/Problem-Solving/tree/master/0036-valid-sudoku) |
+| [0054-spiral-matrix](https://github.com/leebs0521/Problem-Solving/tree/master/0054-spiral-matrix) |
+## Simulation
+|  |
+| ------- |
+| [0054-spiral-matrix](https://github.com/leebs0521/Problem-Solving/tree/master/0054-spiral-matrix) |
 <!---LeetCode Topics End-->
