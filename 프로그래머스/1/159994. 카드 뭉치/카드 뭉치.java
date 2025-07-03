@@ -1,26 +1,23 @@
+import java.util.*;
+
 class Solution {
-        public String solution(String[] cards1, String[] cards2, String[] goal) {
-            int cars1Idx = 0;
-            int cars2Idx = 0;
-            boolean isPossible = true;
-
-            for (String cur : goal) {
-                if (cars1Idx == cards1.length && cars2Idx == cards2.length) {
-                    isPossible = false;
-                    break;
-                }
-
-                if (cars1Idx != cards1.length && cur.equals(cards1[cars1Idx])) {
-                    cars1Idx++;
-                } else if (cars2Idx != cards2.length && cur.equals(cards2[cars2Idx])) {
-                    cars2Idx++;
-                } else {
-                    isPossible = false;
-                    break;
-                }
-
+    public String solution(String[] cards1, String[] cards2, String[] goal) {
+        Queue<String> cardOne = new ArrayDeque<>(Arrays.asList(cards1));
+        Queue<String> cardTwo = new ArrayDeque<>(Arrays.asList(cards2));
+        Queue<String> goalQueue = new ArrayDeque<>(Arrays.asList(goal));
+        
+        while(!goalQueue.isEmpty()) {
+            if(!cardOne.isEmpty() && cardOne.peek().equals(goalQueue.peek())) {
+                cardOne.poll();
+                goalQueue.poll();
+            } else if(!cardTwo.isEmpty() && cardTwo.peek().equals(goalQueue.peek())) {
+                cardTwo.poll();
+                goalQueue.poll();
+            } else {
+                break;
             }
-
-            return isPossible ? "Yes" : "No";
         }
+        
+        return goalQueue.isEmpty() ? "Yes" : "No";
     }
+}
