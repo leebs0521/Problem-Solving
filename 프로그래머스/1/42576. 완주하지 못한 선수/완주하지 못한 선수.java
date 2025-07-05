@@ -1,25 +1,25 @@
 import java.util.*;
 
 class Solution {
-  public String solution(String[] participant, String[] completion) {
-    
-    Map<String, Integer> map = new HashMap<>();
-    String answer = "";
+    public String solution(String[] participant, String[] completion) {
 
-    for (String part : participant) {
-      map.put(part, map.getOrDefault(part, 0) + 1);
+        HashMap<String, Integer> map = new HashMap<>();
+        for (String name : participant) {
+            map.put(name, map.getOrDefault(name, 0) + 1);
+        }
+
+        for (String name : completion) {
+            if (map.containsKey(name)) {
+                int count = map.get(name);
+                if (count == 1) {
+                    map.remove(name);
+                } else {
+                    map.put(name, count - 1);
+                }
+            } else {
+                return name;
+            }
+        }
+        return map.keySet().iterator().next();
     }
-
-    for(String comp : completion) {
-      map.put(comp, map.getOrDefault(comp, 0) - 1);
-    }
-
-    for(String key : map.keySet()) {
-      if(map.get(key) != 0 ) {
-        answer = key;
-      }
-    }
-
-    return answer;
-  }
 }
