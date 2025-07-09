@@ -2,38 +2,49 @@ import java.util.*;
 
 class Solution {
     public int[] solution(String[] id_list, String[] report, int k) {
-        Map<String, Integer> peopleIdx = new HashMap<>();
-
-        int len = id_list.length;
-        for (int i = 0; i < id_list.length; i++) {
-            peopleIdx.put(id_list[i], i);
+        // 신고한 유저 저장한 집합
+        // 신고된 유저 집합
+        int n = id_list.length;
+        HashMap<String, Integer> map = new HashMap<>();
+        for (int i = 0; i < n; i++) {
+            map.put(id_list[i], i);
         }
 
-        Set[] setList = new Set[len];
-        for (int i = 0; i < len; i++) {
-            setList[i] = new HashSet<String>();
+        HashSet<String>[] set1 = new HashSet[n];
+        HashSet<String>[] set2 = new HashSet[n];
+        for (int i = 0; i < n; i++) {
+            set1[i] = new HashSet<>();
+            set2[i] = new HashSet<>();
         }
 
         for (int i = 0; i < report.length; i++) {
-            String id = report[i].split(" ")[0];
-            String r = report[i].split(" ")[1];
-            int rIdx = peopleIdx.get(r);
-            setList[rIdx].add(id);
+            String[] token = report[i].split(" ");
+            String source = token[0];
+            String target = token[1];
+            set1[map.get(source)].add(target);
+            set2[map.get(target)].add(source);
         }
 
-        int[] answer = new int[len];
+        List<String> banList = new ArrayList<>();
 
-        for (int i = 0; i < len; i++) {
-            int res = setList[i].size();
-
-            if (res >= k) {
-                Iterator<String> it = setList[i].iterator(); // Iterator(반복자) 생성
-
-                while (it.hasNext()) { // hasNext() : 데이터가 있으면 true 없으면 false
-                    answer[peopleIdx.get(it.next())]++; // next() : 다음 데이터 리턴
-                }
+        for (int i = 0; i < n; i++) {
+            if (set2[i].size() >= k) {
+                banList.add(id_list[i]);
             }
         }
+
+        int[] answer = new int[n];
+        int cnt;
+        for (int i = 0; i < n; i++) {
+            cnt = 0;
+            for (String banUser : banList) {
+                if (set1[i].contains(banUser)) {
+                    cnt++;
+                }
+            }
+            answer[i] = cnt;
+        }
+
         return answer;
     }
 }
